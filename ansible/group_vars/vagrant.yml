@@ -13,11 +13,10 @@ mysql_users:
        priv: "*.*:ALL"
 
 
-# Configure Java installation - for property documentation see ansible/roles/java/defaults/main.yml
-java_oracle_version: 7u51
-
-
 # Configure Liferay installation
 liferay_autodeploy_dir: /vagrant/liferay-deploy
 
 liferay_enable_remote_debug: true
+
+#nodejs version
+nodejs_version : "8.x"

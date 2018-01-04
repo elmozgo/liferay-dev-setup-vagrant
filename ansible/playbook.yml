@@ -2,10 +2,12 @@
 
 - hosts: all
 
-  sudo: true
-  sudo_user: root
+  become: true
+  become_user: root
+  become_method: sudo
 
   roles:
     - mysql
-    - java
+    - ansible-role-openjdk-jre
+    - ansible-role-nodejs
     - liferay

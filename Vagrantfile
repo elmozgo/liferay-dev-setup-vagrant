@@ -7,6 +7,8 @@
 
 Vagrant::VERSION >= '1.1.0' and Vagrant.configure('2') do |config|
 
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
   config.vm.define :liferay do |liferay|
 
     liferay.vm.box = 'ubuntu/trusty64'
@@ -17,6 +19,15 @@ Vagrant::VERSION >= '1.1.0' and Vagrant.configure('2') do |config|
       liferay.cache.scope       = :box
       liferay.cache.auto_detect = true
     end
+
+
+    $script = <<-SCRIPT
+    echo %vagrant ALL=NOPASSWD:ALL > /etc/sudoers.d/vagrant
+    chmod 0440 /etc/sudoers.d/vagrant
+    usermod -a -G sudo vagrant
+    SCRIPT
+
+    liferay.vm.provision "shell", inline: $script
 
     liferay.vm.provision "ansible" do |ansible|
       ansible.playbook = "ansible/playbook.yml"

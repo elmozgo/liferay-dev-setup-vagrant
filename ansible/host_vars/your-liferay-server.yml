@@ -13,9 +13,6 @@ mysql_users:
        priv: "*.*:ALL"
 
 
-# Configure Java installation - for property documentation see ansible/roles/java/defaults/main.yml
-java_oracle_version: 7u71
-
 
 # Configure Liferay installation (if not using the default version)
 #liferay_version: 6.2-ee-sp9
@@ -25,3 +22,6 @@ java_oracle_version: 7u71
 liferay_system_users_access:
   - any-user
   - other-user
+
+#nodejs version
+nodejs_version : "8.x"
