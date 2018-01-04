@@ -1,9 +1,9 @@
 [submodule "ansible/roles/mysql"]
 	path = ansible/roles/mysql
-	url = https://github.com/bennojoy/mysql.git
+	url = https://github.com/elmozgo/mysql.git
 [submodule "ansible/roles/liferay"]
 	path = ansible/roles/liferay
-	url = https://github.com/silpion/ansible-liferay.git
+	url = https://github.com/elmozgo/ansible-liferay.git
 [submodule "ansible/roles/ansible-role-nodejs"]
 	path = ansible/roles/ansible-role-nodejs
 	url = https://github.com/geerlingguy/ansible-role-nodejs.git
